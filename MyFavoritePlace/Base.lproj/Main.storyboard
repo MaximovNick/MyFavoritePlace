@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hsa-ZJ-E6Z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jDq-Zo-Xqt">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -72,6 +72,7 @@
                                             <outlet property="locationLabel" destination="27Z-O4-2rE" id="j1p-NY-WVh"/>
                                             <outlet property="nameLabel" destination="C9N-8I-dyi" id="ad9-Q2-sUR"/>
                                             <outlet property="typeLabel" destination="Xo6-YJ-jTu" id="06N-j3-Xp6"/>
+                                            <segue destination="GAy-v3-TdL" kind="show" identifier="showDetail" id="NWM-X6-yAj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -96,10 +97,10 @@
                             <constraint firstItem="Wo6-EE-SVG" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="eb9-rT-uBh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="My Favorite Place" largeTitleDisplayMode="always" id="AFk-Nf-Ba3">
+                    <navigationItem key="navigationItem" title="My Favorite Place" largeTitleDisplayMode="never" id="AFk-Nf-Ba3">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Uqf-h5-aDk">
                             <connections>
-                                <segue destination="eCD-wV-9rs" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="IBf-AE-JSu"/>
+                                <segue destination="eCD-wV-9rs" kind="presentation" modalPresentationStyle="fullScreen" id="EXN-bP-ib2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -109,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1243.125" y="108.80281690140845"/>
+            <point key="canvasLocation" x="2868.75" y="108.80281690140845"/>
         </scene>
         <!--New Place-->
         <scene sceneID="T9G-jT-iL3">
@@ -279,31 +280,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SuL-cY-uxU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="gfv-G8-8Cz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2693" y="109"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="GZO-3d-pOD">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hsa-ZJ-E6Z" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="h4V-xf-nTx">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="24"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="0.0"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="FrO-lw-XtX"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kcs-4q-KEG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="454" y="109"/>
+            <point key="canvasLocation" x="3690" y="108.80281690140845"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rRe-Av-U3x">
@@ -322,9 +299,33 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cpV-xQ-j29" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1961.25" y="108.80281690140845"/>
+            <point key="canvasLocation" x="3690" y="-625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ta8-52-vqU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jDq-Zo-Xqt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="dz2-9F-aP4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="24"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="TAO-fg-TT7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nfZ-oL-52v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2102" y="109"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="NWM-X6-yAj"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Photo" width="195" height="196"/>
         <systemColor name="systemBackgroundColor">
