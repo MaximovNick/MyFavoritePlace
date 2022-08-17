@@ -80,9 +80,12 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7OJ-sP-6bc">
                                 <rect key="frame" x="0.0" y="44" width="320" height="32"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="Date"/>
+                                    <segment title="Name"/>
                                 </segments>
+                                <connections>
+                                    <action selector="sortSelection:" destination="BYZ-38-t0r" eventType="valueChanged" id="2lp-ph-Nxh"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -98,6 +101,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Favorite Place" largeTitleDisplayMode="never" id="AFk-Nf-Ba3">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="AZ" id="Myg-pV-uTf">
+                            <connections>
+                                <action selector="reversedSorting:" destination="BYZ-38-t0r" id="OyB-Am-caa"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Uqf-h5-aDk">
                             <connections>
                                 <segue destination="eCD-wV-9rs" kind="presentation" modalPresentationStyle="fullScreen" id="EXN-bP-ib2"/>
@@ -105,6 +113,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="reverseSortingButton" destination="Myg-pV-uTf" id="4KL-Md-h8c"/>
+                        <outlet property="segmentedControl" destination="7OJ-sP-6bc" id="Kkd-W7-SaD"/>
                         <outlet property="tableView" destination="Wo6-EE-SVG" id="3Gn-8s-ocV"/>
                     </connections>
                 </viewController>
@@ -327,6 +337,7 @@
         <segue reference="NWM-X6-yAj"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="AZ" width="25" height="24"/>
         <image name="Photo" width="195" height="196"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

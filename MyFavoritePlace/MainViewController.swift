@@ -12,7 +12,11 @@ class MainViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
+    @IBOutlet var segmentedControl: UISegmentedControl!
+    @IBOutlet var reverseSortingButton: UIBarButtonItem!
+    
     var places: Results<Place>!
+    var ascendingSorting = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,35 +45,61 @@ class MainViewController: UIViewController {
         newPlaceVC.savePlace()
         tableView.reloadData()
     }
+    
+    @IBAction func sortSelection(_ sender: UISegmentedControl) {
+        sorting()
+    }
+    
+    @IBAction func reversedSorting(_ sender: Any) {
+        
+        ascendingSorting.toggle()
+        
+        if ascendingSorting {
+            reverseSortingButton.image = UIImage(named: "AZ")
+        } else {
+            reverseSortingButton.image = UIImage(named: "ZA")
+        }
+        
+        sorting()
+    }
+    
+    private func sorting() {
+        if segmentedControl.selectedSegmentIndex == 0 {
+            places = places.sorted(byKeyPath: "date", ascending: ascendingSorting)
+        } else {
+            places = places.sorted(byKeyPath: "name", ascending: ascendingSorting)
+        }
+        tableView.reloadData()
+    }
+    
 }
 
 
- // MARK: - Table view data source
+// MARK: - Table view data source
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         places.isEmpty ? 0 : places.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CustomTableViewCell else { return UITableViewCell() }
-
+        
         let place = places[indexPath.row]
-
+        
         cell.nameLabel.text = place.name
         cell.locationLabel.text = place.location
         cell.typeLabel.text = place.type
         cell.imagePlace.image = UIImage(data: place.imageData!)
-
+        
         cell.imagePlace.layer.cornerRadius = cell.imagePlace.frame.size.height / 2
         cell.imagePlace.clipsToBounds = true
-
+        
         return cell
     }
     
-// MARK: - Table view delegate
-    
+    // MARK: - Table view delegate
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let place = places[indexPath.row]
@@ -77,5 +107,4 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
-    
 }
