@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD471C5728AEB78C006289A6 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD471C5628AEB78C006289A6 /* RatingControl.swift */; };
 		AD99D0D628A950FD00EC93EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD99D0D528A950FD00EC93EC /* AppDelegate.swift */; };
 		AD99D0D828A950FD00EC93EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD99D0D728A950FD00EC93EC /* SceneDelegate.swift */; };
 		AD99D0DA28A950FD00EC93EC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD99D0D928A950FD00EC93EC /* MainViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD471C5628AEB78C006289A6 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		AD99D0D228A950FD00EC93EC /* MyFavoritePlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFavoritePlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD99D0D528A950FD00EC93EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD99D0D728A950FD00EC93EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				AD99D0EB28A9637F00EC93EC /* PlaceModel.swift */,
 				ADF30C2028AA82B700AA75B1 /* StorageManager.swift */,
 				AD99D0E928A95DB900EC93EC /* CustomTableViewCell.swift */,
+				AD471C5628AEB78C006289A6 /* RatingControl.swift */,
 				AD99D0D928A950FD00EC93EC /* MainViewController.swift */,
 				AD99D0ED28A96FE400EC93EC /* NewPlaceViewController.swift */,
 				AD99D0DB28A950FD00EC93EC /* Main.storyboard */,
@@ -165,6 +168,7 @@
 				AD99D0EE28A96FE400EC93EC /* NewPlaceViewController.swift in Sources */,
 				AD99D0D628A950FD00EC93EC /* AppDelegate.swift in Sources */,
 				ADF30C2128AA82B700AA75B1 /* StorageManager.swift in Sources */,
+				AD471C5728AEB78C006289A6 /* RatingControl.swift in Sources */,
 				AD99D0EC28A9637F00EC93EC /* PlaceModel.swift in Sources */,
 				AD99D0EA28A95DBA00EC93EC /* CustomTableViewCell.swift in Sources */,
 				AD99D0D828A950FD00EC93EC /* SceneDelegate.swift in Sources */,
