@@ -27,8 +27,6 @@ class MainViewController: UIViewController {
     @IBOutlet var segmentedControl: UISegmentedControl!
     @IBOutlet var reverseSortingButton: UIBarButtonItem!
     
-   
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,13 +48,12 @@ class MainViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
-         
+            
             let place = isFiltering ? filteredPlaces[indexPath.row] : places[indexPath.row]
             guard let newPlaceVC = segue.destination as? NewPlaceViewController else { return }
             newPlaceVC.currentPlace = place
         }
     }
-    
     
     @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
         
@@ -92,7 +89,6 @@ class MainViewController: UIViewController {
     }
     
 }
-
 
 // MARK: - Table view data source
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
