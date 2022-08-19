@@ -50,12 +50,8 @@ class MainViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
-            let place: Place
-            if isFiltering {
-                place = filteredPlaces[indexPath.row]
-            } else {
-                place = places[indexPath.row]
-            }
+         
+            let place = isFiltering ? filteredPlaces[indexPath.row] : places[indexPath.row]
             guard let newPlaceVC = segue.destination as? NewPlaceViewController else { return }
             newPlaceVC.currentPlace = place
         }
@@ -106,28 +102,19 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             return filteredPlaces.count
         }
         
-        return places.isEmpty ? 0 : places.count
+        return places.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CustomTableViewCell else { return UITableViewCell() }
         
-        var place = Place()
-        if isFiltering {
-            place = filteredPlaces[indexPath.row]
-        } else {
-            place = places[indexPath.row]
-        }
-        
+        let place = isFiltering ? filteredPlaces[indexPath.row] : places[indexPath.row]
         
         cell.nameLabel.text = place.name
         cell.locationLabel.text = place.location
         cell.typeLabel.text = place.type
         cell.imagePlace.image = UIImage(data: place.imageData!)
-        
-        cell.imagePlace.layer.cornerRadius = cell.imagePlace.frame.size.height / 2
-        cell.imagePlace.clipsToBounds = true
         
         return cell
     }

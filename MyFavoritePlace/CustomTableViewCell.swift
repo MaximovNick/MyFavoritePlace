@@ -9,7 +9,12 @@ import UIKit
 
 class CustomTableViewCell: UITableViewCell {
 
-    @IBOutlet var imagePlace: UIImageView!
+    @IBOutlet var imagePlace: UIImageView! {
+        didSet {
+            imagePlace.layer.cornerRadius = imagePlace.frame.size.height / 2
+            imagePlace.clipsToBounds = true
+        }
+    }
     
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var locationLabel: UILabel!
