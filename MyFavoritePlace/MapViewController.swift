@@ -15,29 +15,42 @@ class MapViewController: UIViewController {
     let annotationIdentifier = "annotationIdentifier"
     var locationManager = CLLocationManager()
     let regionInMeters = 10_000.00
+    var incomeSegueIdentifier = ""
     
     @IBOutlet var mapView: MKMapView!
+    @IBOutlet var mapPinImage: UIImageView!
+    @IBOutlet var adressLabel: UILabel!
+    @IBOutlet var doneButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         mapView.delegate = self
-        setupPlaceMark()
+        setupMapView()
         checkLocationServices()
     }
     
+    
+    @IBAction func doneButtonPressed() {
+        
+    }
+    
     @IBAction func centerViewInUserLocation() {
-        if let location = locationManager.location?.coordinate {
-            let region = MKCoordinateRegion(center: location,
-                                            latitudinalMeters: regionInMeters,
-                                            longitudinalMeters: regionInMeters
-            )
-            mapView.setRegion(region, animated: true)
-        }
+        
+       showUserLocation()
     }
     
     @IBAction func closeVC() {
         dismiss(animated: true)
+    }
+    
+    private func setupMapView() {
+        if incomeSegueIdentifier == "showPlace" {
+            setupPlaceMark()
+            mapPinImage.isHidden = true
+            adressLabel.isHidden = true
+            doneButton.isHidden = true
+        }
     }
     
     private func setupPlaceMark() {
@@ -105,9 +118,21 @@ class MapViewController: UIViewController {
             break
         case .authorizedWhenInUse:
             mapView.showsUserLocation = true
+            if incomeSegueIdentifier == "getAdress" { showUserLocation() }
             break
         @unknown default:
             print("New case is available")
+        }
+    }
+    
+    private func showUserLocation() {
+        
+        if let location = locationManager.location?.coordinate {
+            let region = MKCoordinateRegion(center: location,
+                                            latitudinalMeters: regionInMeters,
+                                            longitudinalMeters: regionInMeters
+            )
+            mapView.setRegion(region, animated: true)
         }
     }
     
@@ -147,7 +172,7 @@ extension MapViewController: MKMapViewDelegate {
     
 }
 
-
+// MARK: - CLLocationManagerDelegate
 extension MapViewController: CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         checkLocationAuthorization()
