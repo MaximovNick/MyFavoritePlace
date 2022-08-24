@@ -241,7 +241,7 @@
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24" scale="large"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="b0S-GO-Ttc" kind="presentation" identifier="getAdress" modalPresentationStyle="fullScreen" id="pnk-s3-TGN"/>
+                                                        <segue destination="b0S-GO-Ttc" kind="presentation" identifier="getAddress" modalPresentationStyle="fullScreen" id="pnk-s3-TGN"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
