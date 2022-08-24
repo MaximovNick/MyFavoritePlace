@@ -237,11 +237,11 @@
                                                         <constraint firstAttribute="width" constant="22" id="UQS-iZ-nbD"/>
                                                     </constraints>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal" image="mappin.and.ellipse">
+                                                    <state key="normal" image="Placeholder">
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24" scale="large"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="b0S-GO-Ttc" kind="presentation" identifier="getAdress" id="pnk-s3-TGN"/>
+                                                        <segue destination="b0S-GO-Ttc" kind="presentation" identifier="getAdress" modalPresentationStyle="fullScreen" id="pnk-s3-TGN"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -365,15 +365,15 @@
                                     <action selector="closeVC" destination="b0S-GO-Ttc" eventType="touchUpInside" id="XFP-0x-Px5"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin.and.ellipse" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="U7g-su-lqx">
-                                <rect key="frame" x="187" y="407.5" width="40" height="40.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pin" translatesAutoresizingMaskIntoConstraints="NO" id="U7g-su-lqx">
+                                <rect key="frame" x="187" y="408" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="KUf-WO-jV5"/>
                                     <constraint firstAttribute="height" constant="40" id="mLw-Bf-9cj"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Adress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hcO-Bx-vcr">
-                                <rect key="frame" x="20" y="173" width="374" height="36"/>
+                                <rect key="frame" x="20" y="124" width="374" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -408,7 +408,7 @@
                         <viewLayoutGuide key="safeArea" id="rbw-Ji-lkv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ObL-Z3-dEW" firstAttribute="top" secondItem="hcO-Bx-vcr" secondAttribute="bottom" constant="-209" id="2oc-nY-B4a"/>
+                            <constraint firstItem="ObL-Z3-dEW" firstAttribute="top" secondItem="hcO-Bx-vcr" secondAttribute="bottom" constant="-160" id="2oc-nY-B4a"/>
                             <constraint firstItem="rbw-Ji-lkv" firstAttribute="bottom" secondItem="pBd-eG-eBi" secondAttribute="bottom" constant="30" id="37o-Nn-yXh"/>
                             <constraint firstItem="hcO-Bx-vcr" firstAttribute="leading" secondItem="rbw-Ji-lkv" secondAttribute="leading" constant="20" id="3CQ-u0-c6j"/>
                             <constraint firstItem="rbw-Ji-lkv" firstAttribute="bottom" secondItem="9CC-kq-UUC" secondAttribute="bottom" constant="98" id="Do3-r6-azO"/>
@@ -426,7 +426,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="adressLabel" destination="hcO-Bx-vcr" id="RQR-1q-RWz"/>
+                        <outlet property="addressLabel" destination="hcO-Bx-vcr" id="RQR-1q-RWz"/>
                         <outlet property="doneButton" destination="pBd-eG-eBi" id="Lh1-Yp-Lh9"/>
                         <outlet property="mapPinImage" destination="U7g-su-lqx" id="aaa-BB-q33"/>
                         <outlet property="mapView" destination="ObL-Z3-dEW" id="Rku-GV-dbi"/>
@@ -483,17 +483,17 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="r6y-LX-RgV"/>
+        <segue reference="pnk-s3-TGN"/>
         <segue reference="NWM-X6-yAj"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AZ" width="25" height="24"/>
         <image name="Photo" width="195" height="196"/>
+        <image name="Pin" width="42" height="42"/>
+        <image name="Placeholder" width="22" height="22"/>
         <image name="camcel" width="128" height="128"/>
         <image name="location.circle.fill" catalog="system" width="128" height="121"/>
         <image name="map" width="50" height="50"/>
-        <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
-        <image name="mappin.and.ellipse" width="128" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
