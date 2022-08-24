@@ -404,6 +404,21 @@
                                     <action selector="centerViewInUserLocation" destination="b0S-GO-Ttc" eventType="touchUpInside" id="zTg-4Z-Ltv"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z8p-vF-hmN">
+                                <rect key="frame" x="182" y="783" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Y6X-bW-9Th"/>
+                                    <constraint firstAttribute="height" constant="50" id="qyu-9l-sf9"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="chevron.right.circle.fill" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="33"/>
+                                </state>
+                                <connections>
+                                    <action selector="goButtonPressed" destination="b0S-GO-Ttc" eventType="touchUpInside" id="IEK-JR-EES"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rbw-Ji-lkv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -412,10 +427,12 @@
                             <constraint firstItem="rbw-Ji-lkv" firstAttribute="bottom" secondItem="pBd-eG-eBi" secondAttribute="bottom" constant="30" id="37o-Nn-yXh"/>
                             <constraint firstItem="hcO-Bx-vcr" firstAttribute="leading" secondItem="rbw-Ji-lkv" secondAttribute="leading" constant="20" id="3CQ-u0-c6j"/>
                             <constraint firstItem="rbw-Ji-lkv" firstAttribute="bottom" secondItem="9CC-kq-UUC" secondAttribute="bottom" constant="98" id="Do3-r6-azO"/>
+                            <constraint firstItem="Z8p-vF-hmN" firstAttribute="centerX" secondItem="tv1-oE-FUY" secondAttribute="centerX" id="JlJ-4h-ajK"/>
                             <constraint firstItem="U7g-su-lqx" firstAttribute="centerX" secondItem="tv1-oE-FUY" secondAttribute="centerX" id="KT0-oP-wBg"/>
                             <constraint firstItem="rbw-Ji-lkv" firstAttribute="trailing" secondItem="hcO-Bx-vcr" secondAttribute="trailing" constant="20" id="MaO-vf-PIY"/>
                             <constraint firstItem="bRX-Rv-vUh" firstAttribute="top" secondItem="rbw-Ji-lkv" secondAttribute="top" constant="40" id="Msm-6B-XF5"/>
                             <constraint firstItem="U7g-su-lqx" firstAttribute="centerY" secondItem="tv1-oE-FUY" secondAttribute="centerY" constant="-20" id="XbG-4h-3kw"/>
+                            <constraint firstItem="rbw-Ji-lkv" firstAttribute="bottom" secondItem="Z8p-vF-hmN" secondAttribute="bottom" constant="29" id="Y9V-Bf-IWS"/>
                             <constraint firstItem="pBd-eG-eBi" firstAttribute="centerX" secondItem="tv1-oE-FUY" secondAttribute="centerX" id="YZw-mw-4aL"/>
                             <constraint firstItem="ObL-Z3-dEW" firstAttribute="leading" secondItem="rbw-Ji-lkv" secondAttribute="leading" id="ddx-4w-qRu"/>
                             <constraint firstItem="rbw-Ji-lkv" firstAttribute="trailing" secondItem="bRX-Rv-vUh" secondAttribute="trailing" constant="40" id="eCA-9w-JHL"/>
@@ -428,6 +445,7 @@
                     <connections>
                         <outlet property="addressLabel" destination="hcO-Bx-vcr" id="RQR-1q-RWz"/>
                         <outlet property="doneButton" destination="pBd-eG-eBi" id="Lh1-Yp-Lh9"/>
+                        <outlet property="goButton" destination="Z8p-vF-hmN" id="JR2-gB-tYq"/>
                         <outlet property="mapPinImage" destination="U7g-su-lqx" id="aaa-BB-q33"/>
                         <outlet property="mapView" destination="ObL-Z3-dEW" id="Rku-GV-dbi"/>
                     </connections>
@@ -492,6 +510,7 @@
         <image name="Pin" width="42" height="42"/>
         <image name="Placeholder" width="22" height="22"/>
         <image name="camcel" width="128" height="128"/>
+        <image name="chevron.right.circle.fill" catalog="system" width="128" height="121"/>
         <image name="location.circle.fill" catalog="system" width="128" height="121"/>
         <image name="map" width="50" height="50"/>
         <systemColor name="systemBackgroundColor">
