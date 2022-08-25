@@ -303,8 +303,8 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Ocn-2v-q1T" firstAttribute="centerY" secondItem="JxA-iP-ewe" secondAttribute="centerY" id="MpJ-xS-hVE"/>
-                                                <constraint firstItem="Ocn-2v-q1T" firstAttribute="centerX" secondItem="JxA-iP-ewe" secondAttribute="centerX" id="fA1-1f-VFK"/>
+                                                <constraint firstItem="Ocn-2v-q1T" firstAttribute="centerY" secondItem="JxA-iP-ewe" secondAttribute="centerY" id="KH2-M0-YFC"/>
+                                                <constraint firstItem="Ocn-2v-q1T" firstAttribute="centerX" secondItem="JxA-iP-ewe" secondAttribute="centerX" id="YW2-3c-kcL"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
